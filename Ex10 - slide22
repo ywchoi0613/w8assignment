@@ -1,0 +1,48 @@
+Siha [] aa;
+punleu [] pp;
+kumamon [] kk;
+void setup() {
+  size(800, 600);
+  aa = new Siha[5];
+  for (int i=0; i<5; i++) {
+    aa[i] = new Siha();
+  }
+  pp = new punleu[3];
+  for (int i=0; i<3; i++) {
+    pp[i] = new punleu(random(width),random(height));
+  }  
+  kk = new kumamon[3];
+  for (int i=0; i<3; i++) {
+    kk[i] = new kumamon(random(width),random(height));
+  }  
+}
+void draw(){
+  background(0,255,255);
+  for (int i=0; i<3; i++) {
+    pp[i].update();
+    pp[i].punleuShow();
+    if(i != 2){
+      for(int j=i+1;j<3;j++){
+        pp[i].collide(pp[j]);
+      }
+    }
+  }  
+  for (int i=0; i<5; i++) {
+    if(i != 4){
+      for(int j=i+1;j<5;j++){
+        aa[i].collide(aa[j]);
+      }
+    }
+    aa[i].act();
+    aa[i].Life();
+  }
+  for (int i=0; i<3; i++) {
+    if(i != 2){
+      for(int j=i+1;j<3;j++){
+        kk[i].collide(kk[j]);
+      }
+    }
+    kk[i].act();
+    kk[i].uu();
+  }  
+}
