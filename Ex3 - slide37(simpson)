@@ -2,7 +2,7 @@ class simpson{
   simpson(){};
   void gg(float x, float y){
   float s = 2.0;  
-  //fill(250,200,30);         //얼굴
+  fill(250,200,30);         //얼굴
   quad( x-s*32,y-s*20, x-s*16,y+s*20, x+s*20,y+s*16, x+s*8,y-s*32);
   quad( x-s*16,y+s*20, x-s*20,y+s*28, x+s*4,y+s*32,  x+s*20,y+s*16);
   triangle(x-s*32,y-s*20,  x-s*32.5,y-s*24.5, x-s*27,y-s*21.5);      //머리
@@ -16,18 +16,18 @@ class simpson{
   arc(x-s*18,y+s*15,8*s,8*s, PI/4, PI*7/4 );     //귀
   arc(x+s*8,y+s*8,28*s,8*s, PI*6/4, PI*10/4 );//코
   
-  //fill(250,250,250);          //눈
+  fill(250,250,250);          //눈
   circle(x+s*10,y-s*2 , 18.4*s);
   circle(x,y ,18.4*s);
   
-  //fill(0,0,0);          //눈동자
+  fill(0,0,0);          //눈동자
   circle(x+s*3,y+s ,2.2*s);
   circle(x+s*14,y-s ,2.2*s);
   
-  //fill(250,90,50);      //입
+  fill(250,90,50);      //입
   triangle( x-s*8,y+s*19.1, x+s*12,y+s*24,  x+s*20,y+s*16);
   
-  //fill(250,100,0);           //옷
+  fill(250,100,0);           //옷
   arc(x+s*3, y+s*40, 13*s, 16*s, PI, PI*2 );  //우 팔
   quad(x-s*20,y+s*28, x-s*24,y+s*40, x+s*7,y+s*40,  x+s*4,y+s*32); //몸통
   arc(x-s*21, y+s*40, 13*s,20*s, PI, PI*2 ); //좌 팔
